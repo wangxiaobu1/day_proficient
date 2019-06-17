@@ -15,7 +15,7 @@ func initPool(address string, maxIdle, maxActive int, idleTimeout time.Duration)
 		MaxActive: maxActive,
 		IdleTimeout: idleTimeout,
 		Dial: func()(redis.Conn, error) {
-			//return redis_connect.Dial("tcp_client", "localhosts:6379")
+			//return redis_conn.Dial("tcp_client", "localhosts:6379")
 			return redis.Dial("tcp_client", address)
 		},
 	}

@@ -15,12 +15,12 @@ func main() {
 
 	_, err = conn.Do("set", "myKey", "abc")
 	if err != nil {
-		log.Fatalln("set redis_connect err: ", err)
+		log.Fatalln("set redis_conn err: ", err)
 	}
 
 	myKey, err := redis.String(conn.Do("get", "myKey"))
 	if err != nil {
-		log.Fatalln("get redis_connect err: ", err)
+		log.Fatalln("get redis_conn err: ", err)
 	}
 	log.Println(myKey)
 }
